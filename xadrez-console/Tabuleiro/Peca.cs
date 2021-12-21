@@ -19,6 +19,11 @@ namespace tabuleiro
             this.qteMovimentos = 0;
         }
 
+        public void decrementarQteMovimentos()
+        {
+            qteMovimentos--;
+        }
+
         public void incrementarQteMovimentos()
         {
             qteMovimentos++;
@@ -31,7 +36,7 @@ namespace tabuleiro
             {
                 for(int j = 0; j< tab.colunas; j++)
                 {
-                    if (mat[i,j] == true)
+                    if (mat[i,j])
                     {
                         return true;
                     }
@@ -41,7 +46,7 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentoPossiveis()[pos.Linha, pos.Coluna];
         }
